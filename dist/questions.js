@@ -22,15 +22,12 @@ printValueLength([1, 2]); // "Array length: 2"
 printValueLength([{ name: "Ali" }, { name: "Mohammed" }, { name: "Mostafa" }]); // "Array length: 3"
 // -----------------------------------------------------------------
 // Write a generic class Storage<T> that holds an array of items of type T. Add methods to add items and get all items.
-var Storage = /** @class */ (function () {
-    function Storage() {
-    }
-    return Storage;
-}());
-var stringStorage = new Storage();
+class Storage {
+}
+const stringStorage = new Storage();
 stringStorage.addItem("hello");
 console.log(stringStorage.getItems()); // ["hello"]
-export var users = [
+export const users = [
     {
         id: 1,
         name: "Ahmed",
@@ -49,8 +46,8 @@ export var users = [
         role: "ADMIN",
     },
 ];
-var summary = { title: "TypeScript Tips", author: "Alice" };
-var publicUser = {
+const summary = { title: "TypeScript Tips", author: "Alice" };
+const publicUser = {
     id: 1,
     name: "John",
     email: "john@example.com",

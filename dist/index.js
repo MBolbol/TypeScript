@@ -30,37 +30,36 @@ printValueLength(["a", "b", "c"]); // "Array length: 3"
 printValueLength([1, 2]); // "Array length: 2"
 printValueLength([{ name: "Ali" }, { name: "Mohammed" }, { name: "Mostafa" }]); // "Array length: 3"
 // Write a generic class myStorage<T> that holds an array of items of type T. Add methods to add items and get all items.
-var myStorage = /** @class */ (function () {
-    function myStorage() {
+class myStorage {
+    constructor() {
         this.items = [];
     }
     // Add an item to the myStorage
-    myStorage.prototype.addItem = function (item) {
+    addItem(item) {
         this.items.push(item);
-    };
+    }
     // Get all items from the myStorage
-    myStorage.prototype.getItems = function () {
+    getItems() {
         return this.items;
-    };
-    return myStorage;
-}());
+    }
+}
 // Usage examples
 // Storing strings
-var stringmyStorage = new myStorage();
+const stringmyStorage = new myStorage();
 stringmyStorage.addItem("Hello");
 stringmyStorage.addItem("World");
 console.log(stringmyStorage.getItems()); // ["Hello", "World"]
 // Storing numbers
-var numbermyStorage = new myStorage();
+const numbermyStorage = new myStorage();
 numbermyStorage.addItem(1);
 numbermyStorage.addItem(2);
 console.log(numbermyStorage.getItems()); // [1, 2]
 // Storing objects
-var objectmyStorage = new myStorage();
+const objectmyStorage = new myStorage();
 objectmyStorage.addItem({ name: "Ali" });
 objectmyStorage.addItem({ name: "Mostafa" });
 console.log(objectmyStorage.getItems()); // [{ name: "Ali" }, { name: "Mostafa" }]
-var users = [
+const users = [
     {
         id: 1,
         name: "Ahmed",
@@ -80,14 +79,14 @@ var users = [
     },
 ];
 console.log(users);
-var summary = { title: "TypeScript Tips", author: "Alice" };
+const summary = { title: "TypeScript Tips", author: "Alice" };
 console.log(summary);
-var publicUser = {
+const publicUser = {
     id: 1,
     name: "John",
     email: "john@example.com",
 };
-var todo = {
+const todo = {
     id: "1",
     title: "Learn TypeScript",
     description: "Understand utility types",
